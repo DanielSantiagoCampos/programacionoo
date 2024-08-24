@@ -5,9 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header" id="card">{{ __('Login') }}</div>
 
-                <div class="card-body">
+                <div class="card-body" id="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -75,7 +75,7 @@
 
                         <div class="row mb-0 text-center">
 
-                            <div class="col-md-8 offset-md-4">
+                            <div style="color: pink;" class="col-md-8 offset-md-4">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
                                     let scale = 1;
@@ -86,7 +86,7 @@
                                 </a>
                             </div>
 
-                            <div class="col-md-8 offset-md-4">
+                            <div style="color: blue;" class="col-md-8 offset-md-4">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                   onclick="event.preventDefault();
                                     let scale = 1;
@@ -96,6 +96,34 @@
                                     }
                                     ">
                                   {{ __('Disminuye') }}
+                                </a>
+                            </div>
+
+                            <div style="color: red;" class="col-md-8 offset-md-4">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                  onclick="event.preventDefault();
+                                     document.body.style.backgroundColor = 'black';
+                                     document.body.style.color = 'white'; 
+                                     document.getElementById('card').style.color='white';
+                                     document.getElementById('card').style.backgroundColor='black';
+                                     document.getElementById('card-body').style.color='white';
+                                     document.getElementById('card-body').style.backgroundColor='black';
+                                    ">
+                                  {{ __('Tema oscuro') }}
+                                </a>
+                            </div>
+
+                            <div class="col-md-8 offset-md-4">
+                                <a style="color: green;" class="dropdown-item" href="{{ route('logout') }}"
+                                  onclick="event.preventDefault();
+                                     document.body.style.backgroundColor = 'white';
+                                     document.body.style.color = 'black'; 
+                                     document.getElementById('card').style.color='black';
+                                     document.getElementById('card').style.backgroundColor='white';
+                                     document.getElementById('card-body').style.color='black';
+                                     document.getElementById('card-body').style.backgroundColor='white';
+                                    ">
+                                  {{ __('Tema Claro') }}
                                 </a>
                             </div>
                         </div>
